@@ -26,8 +26,9 @@ namespace MvcStok.Controllers
             db.Kategoriler.AddObject(k);
             db.SaveChanges();
 
-            return View();
+            return RedirectToAction("Index");
 
         }
+      
     }
 }
