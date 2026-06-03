@@ -10,6 +10,8 @@
         <tr>
             <th>Id</th>
             <th>Ad</th>
+            <th>Sil</th>
+            <th>Güncelle</th>
         </tr>
     </thead>
     <tbody>
@@ -18,6 +20,8 @@
                 <tr>
                     <td>@i.KategoriId</td>
                     <td>@i.KategoriAdi</td>
+                    <td><a href="/Kategori/Sil/@i.KategoriId" class="btn btn-danger">Sil</a></td>
+                    <td><a href="/Kategori/Guncelle/@i.KategoriId" class="btn btn-warning">Güncelle</a></td>
                 </tr>
             }
     </tbody>
