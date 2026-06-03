@@ -14,6 +14,8 @@
             <th>UrunKategori</th>
             <th>Urunstok</th>
             <th>UrunFiyat</th>
+            <th>Sil</th>
+            <th>Güncelle</th>
         </tr>
     </thead>
     <tbody>
@@ -26,8 +28,11 @@
                     <td>@urun.UrunKategori</td>
                     <td>@urun.Urunstok</td>
                     <td>@urun.UrunFiyat</td>
+                    <td><a href="/Urun/Sil/@urun.UrunId" class="btn btn-danger">sil</a></td>
+                    <td><a href="/Urun/Guncelle/@urun.UrunId" class="btn btn-warning">Güncelle</a></td>
                 </tr>
             }
     </tbody>
 </table>
+<a href="/Urun/Ekle" class="btn btn-primary">Ekle</a>
 
