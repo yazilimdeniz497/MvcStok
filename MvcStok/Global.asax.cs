@@ -9,7 +9,10 @@ using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
 using System.Web.Security;
+using System.Data.Entity;
+using System.Data.Entity.SqlServer;
 using Route = Glimpse.AspNet.AlternateType.Route;
+
 
 
 namespace MvcStok
