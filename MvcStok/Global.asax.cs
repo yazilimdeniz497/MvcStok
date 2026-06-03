@@ -1,10 +1,16 @@
-﻿using System;
+﻿using Glimpse.AspNet.AlternateType;
+using Glimpse.AspNet.Tab;
+using Microsoft.AspNetCore.Routing;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
+using System.Web.Security;
+using Route = Glimpse.AspNet.AlternateType.Route;
+
 
 namespace MvcStok
 {
@@ -17,5 +23,15 @@ namespace MvcStok
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
         }
+          
+
+
+
+
+            
+
+
+        }
+
     }
-}
+
