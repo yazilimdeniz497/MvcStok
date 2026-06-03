@@ -1,0 +1,16 @@
+﻿@using MvcStok.Models.Entity
+@model Kategoriler
+@{
+    ViewBag.Title = "Ekle";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<form method="post" >
+    <div class="mb-3">
+        <label  for="Ad">AD</label>
+        <input class="form-control" type="text" name="KategoriAdi"/>
+    </div>
+    <div>
+        <button class="btn btn-primary" type="submit" >Ekle</button>
+    </div>
+</form>
