@@ -1,0 +1,30 @@
+﻿@model MvcStok.Models.Entity.Urunler
+@{
+    ViewBag.Title = "Ekle";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<form method="post">
+    <div class="mb-3">
+        <label for="Urunadi">Urunadi</label>
+        <input class="form-control" name="Urunadi" id="Urunadi" />
+    </div>
+    <div class="mb-3">
+        <label for="Marka">Marka</label>
+        <input class="form-control" name="Marka" id="Marka" />
+    </div>
+    <div class="mb-3">
+        <label for="UrunKategori">Kategori Seçiniz:</label>
+        @Html.DropDownListFor(x => x.UrunKategori, (List<SelectListItem>)ViewBag.dgr1, new { @class = "form-control" });
+    </div>
+    <div class="mb-3">
+        <label for="Urunstok">Urunstok:</label>
+        <input class="form-control" name="Urunstok" id="Urunstok" />
+    </div>
+    <div class="mb-3">
+        <label for="UrunFiyat">UrunFiyat:</label>
+        <input class="form-control" name="UrunFiyat" id="UrunFiyat" />
+    </div>
+    <button type="submit" class="btn btn-primary">Ekle</button>
+</form>
+
