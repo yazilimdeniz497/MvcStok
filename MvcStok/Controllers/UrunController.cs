@@ -48,5 +48,32 @@ namespace MvcStok.Controllers
           
             return RedirectToAction("Index");
         }
+        [HttpGet]
+        public ActionResult Guncelle(int id)
+        {
+            List<SelectListItem> degerler = (from i in db.Kategoriler.ToList()
+                                             select new SelectListItem
+                                             {
+                                                 Text = i.KategoriAdi,
+                                                 Value = i.KategoriId.ToString(),
+                                             }).ToList();
+            ViewBag.dgr1 = degerler;
+            var urun = db.Urunler.FirstOrDefault(i => i.UrunId == id);
+            return View(urun);
+        }
+        [HttpPost]
+        public ActionResult Guncelle(Urunler u,int id)
+        {
+
+            var ktg = db.Kategoriler.Where(i => i.KategoriId == u.UrunKategori).FirstOrDefault();
+            u.Kategoriler = ktg;
+            var urun = db.Urunler.FirstOrDefault(i => i.UrunId == id);
+            urun.Urunadi = u.Urunadi;
+            urun.Urunstok = u.Urunstok;
+            urun.UrunKategori=u.UrunKategori;
+            urun.UrunFiyat = u.UrunFiyat;
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }
