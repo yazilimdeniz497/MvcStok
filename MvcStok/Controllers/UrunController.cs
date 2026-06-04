@@ -39,5 +39,14 @@ namespace MvcStok.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
+        [HttpGet]
+        public ActionResult Sil(int id)
+        {
+            var ogesil=db.Urunler.FirstOrDefault(x=>x.UrunId==id);
+            db.Urunler.DeleteObject(ogesil);
+            db.SaveChanges();
+          
+            return RedirectToAction("Index");
+        }
     }
 }

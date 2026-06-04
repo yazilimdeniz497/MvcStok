@@ -29,6 +29,15 @@ namespace MvcStok.Controllers
             return RedirectToAction("Index");
 
         }
+        
+        public ActionResult Sil(int? id)
+        {
+                var oge = db.Kategoriler.FirstOrDefault(k=>k.KategoriId==id);
+                db.Kategoriler.DeleteObject(oge);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+
+        }
       
     }
 }
