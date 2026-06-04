@@ -30,6 +30,16 @@ namespace MvcStok.Controllers
             return RedirectToAction("Index");
 
         }
+        [HttpGet]
+        public ActionResult Sil(int id)
+        {
+            var ogesil=db.Musteriler.FirstOrDefault(u=>u.MüsteriId==id) ;
+            db.Musteriler.DeleteObject(ogesil);
+            db.SaveChanges();
+
+            return RedirectToAction("Index");
+
+        }
 
     }
 }
