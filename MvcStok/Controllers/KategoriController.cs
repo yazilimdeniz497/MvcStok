@@ -38,6 +38,25 @@ namespace MvcStok.Controllers
                 return RedirectToAction("Index");
 
         }
-      
+        [HttpGet]
+        public ActionResult Guncelle(int id)
+        {
+            var ktg = db.Kategoriler.FirstOrDefault(m => m.KategoriId == id);
+            return View(ktg);
+
+        }
+        [HttpPost]
+        public ActionResult Guncelle(Kategoriler k,int id)
+        {
+            var ktg = db.Kategoriler.FirstOrDefault(m => m.KategoriId == id);
+            ktg.KategoriId = k.KategoriId;
+            ktg.KategoriAdi = k.KategoriAdi;
+            db.SaveChanges();
+
+
+            return RedirectToAction("Index");
+
+        }
+
     }
 }

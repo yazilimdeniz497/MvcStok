@@ -1,0 +1,19 @@
+﻿@model MvcStok.Models.Entity.Kategoriler
+@{
+    ViewBag.Title = "Guncelle";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<form method="post">
+    <div class="mb-3">
+        <label for="kategoriid">id</label>
+        @Html.TextBoxFor(x => x.KategoriId, new { @class = "form-control" })
+    </div>
+    <div class="mb-3">
+        <label for="kategoriad">Ad</label>
+        @Html.TextBoxFor(x => x.KategoriAdi, new { @class = "form-control" })
+    </div>
+    <button class="btn btn-warning" type="submit"> Güncelle</button>
+
+</form>
+
