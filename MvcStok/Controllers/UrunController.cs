@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Data.Entity;
 using System.Web;
 using System.Web.Mvc;
 using MvcStok.Models.Entity;
@@ -13,8 +14,9 @@ namespace MvcStok.Controllers
         
         public ActionResult Index()
         {
-            var degerler=db.Urunler.ToList();
-            return View(degerler);
+            var urunler = db.Urunler.ToList();
+
+            return View(urunler);
         }
         [HttpGet]
         public ActionResult Ekle()

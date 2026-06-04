@@ -17,7 +17,7 @@
             <th>Sil</th>
             <th>Güncelle</th>
         </tr>
-    </thead>
+    </thead>c
     <tbody>
         @foreach(var urun in Model)
             {
@@ -25,7 +25,7 @@
                     <td>@urun.UrunId</td>
                     <td>@urun.Urunadi</td>
                     <td>@urun.Marka</td>
-                    <td>@urun.UrunKategori</td>
+                    <td>@((urun.Kategoriler != null) ? urun.Kategoriler.KategoriAdi : "Kategori Yok")</td>
                     <td>@urun.Urunstok</td>
                     <td>@urun.UrunFiyat</td>
                     <td><a href="/Urun/Sil/@urun.UrunId" class="btn btn-danger">sil</a></td>
