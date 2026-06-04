@@ -1,0 +1,22 @@
+﻿@model MvcStok.Models.Entity.Musteriler
+@{
+    ViewBag.Title = "Ekle";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<form method="post">
+    <div class="mb-3">
+        <label for="MüsteriId">id</label>
+        @Html.TextBoxFor(x => x.MüsteriId, new { @class = "form-control" })
+    </div>
+    <div class="mb-3">
+        <label for="musteriadi">Ad</label>
+        @Html.TextBoxFor(x => x.MusteriAD, new { @class = "form-control" })
+    </div>
+    <div class="mb-3">
+        <label for="MusteriSoyad">Soyad</label>
+        @Html.TextBoxFor(x => x.MusteriSoyad, new { @class = "form-control" })
+    </div>
+    <button type="submit" class="btn btn-warning">Guncelle</button>
+</form>
+

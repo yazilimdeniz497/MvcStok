@@ -40,6 +40,26 @@ namespace MvcStok.Controllers
             return RedirectToAction("Index");
 
         }
+        [HttpGet]
+        public ActionResult Guncelle(int id)
+        {
+            var mus = db.Musteriler.FirstOrDefault(m => m.MüsteriId == id);
+
+            return View(mus);
+
+        }
+        [HttpPost]
+        public ActionResult Guncelle(Musteriler m,int id)
+        {
+            var mus = db.Musteriler.FirstOrDefault(n => n.MüsteriId == id);
+            mus.MusteriAD = m.MusteriAD;
+            mus.MusteriSoyad = m.MusteriSoyad;
+            db.SaveChanges();
+
+
+            return RedirectToAction("Index");
+
+        }
 
     }
 }

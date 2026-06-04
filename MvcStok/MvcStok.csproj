@@ -331,6 +331,7 @@
     <Content Include="Views\Urun\Ekle.cshtml" />
     <Content Include="Views\Kategori\Guncelle.cshtml" />
     <Content Include="Views\Urun\Guncelle.cshtml" />
+    <Content Include="Views\Musteri\Guncelle.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
