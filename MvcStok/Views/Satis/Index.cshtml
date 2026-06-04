@@ -1,0 +1,35 @@
+﻿@using MvcStok.Models.Entity
+@model List<Satislar>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Urunıd</th>
+            <th>MüsteriId</th>
+            <th>ADET</th>
+            <th>Fiyat</th>
+            <th>Sil</th>
+            <th>Güncelle</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var item in Model)
+            {
+                <tr>
+                    <td>@item.SatisId</td>
+                    <td>@((item.Urunler!=null) ? @item.Urunler.Urunadi :"ürün adi bos")</td>
+                    <td>@((item.Musteriler!=null) ? @item.Musteriler.MusteriAD+" "+ item.Musteriler.MusteriSoyad : "Musteri adi bos")</td>
+                    <td>@item.ADET</td>
+                    <td>@item.Fiyat</td>
+                    <td><a href="/Satis/Sil/@item.SatisId" class="btn btn-danger">Sil</a></td>
+                    <td><a href="/Satis/Guncelle/@item.SatisId" class="btn btn-warning">Guncelle</a></td>
+                </tr>
+            }
+    </tbody>
+</table>
+<a href="/Satis/Ekle/" class="btn btn-primary">Ekle</a>

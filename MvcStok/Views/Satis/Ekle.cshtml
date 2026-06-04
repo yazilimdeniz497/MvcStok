@@ -1,0 +1,29 @@
+﻿@using MvcStok.Models.Entity
+@model Satislar
+@{
+    ViewBag.Title = "Ekle";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<form method="post">
+    <div class="mb-3">
+        <label for="Ad">Ürün</label>
+        @Html.DropDownListFor(x => x.Urunıd, (List<SelectListItem>)ViewBag.dgr1, new { @class = "form-control" })
+    </div>
+    <div class="mb-3">
+        <label for="Ad">Müsteri </label>
+        @Html.DropDownListFor(x => x.MüsteriId, (List<SelectListItem>)ViewBag.dgr2, new { @class = "form-control" })
+    </div>
+    <div class="mb-3">
+        <label for="Ad">ADet</label>
+        @Html.TextBoxFor(x => x.ADET, new { @class = "form-control" })
+    </div>
+    <div class="mb-3">
+        <label for="Ad">Fiyat</label>
+        @Html.TextBoxFor(x => x.Fiyat, new { @class = "form-control" })
+    </div>
+    <div>
+        <button class="btn btn-primary" type="submit">Ekle</button>
+    </div>
+</form>
+
